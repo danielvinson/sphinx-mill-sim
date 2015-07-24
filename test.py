@@ -33,14 +33,13 @@ def sharedColors(cardName1, cardName2):
   return False
 
 def runSimulation(deck):
-  numTrials = 1
+  numTrials = 10
   trialResults = []
   for trial in range(numTrials):
     testDeck = deck[:] # Slice to create a copy instead of a reference to the original
     activationCount = 1
     shuffle(testDeck)
     while len(testDeck) > 0:
-      print testDeck
       if sharedColors(testDeck[0],testDeck[1]):
         del testDeck[0:2]
         continue
